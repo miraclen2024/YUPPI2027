@@ -1,8 +1,86 @@
-<html>
-  <title>test mode</title>
-  <head>
-    <body>
-      test mode
-    </body>
-  </head>
-</html>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff7fb">
+<title>YUPPI｜歌と雑談でトップを目指す応援サイト</title>
+<style>
+:root{--pink:#b9e5ff;--rose:#6baed6;--ink:#405b70;--cream:#f7fcff;--lav:#e5f4ff;--gold:#9bc9e8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;background:var(--cream);line-height:1.8}
+a{color:inherit;text-decoration:none}.wrap{width:min(1080px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#f7fcffeF;backdrop-filter:blur(12px);border-bottom:1px solid #d8edfa}
+.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-family:Georgia,serif;font-weight:bold;letter-spacing:.08em;color:var(--rose)}nav{display:flex;gap:22px;font-size:.88rem}nav a:hover{color:var(--rose)}
+.hero{min-height:650px;display:grid;place-items:center;text-align:center;padding:90px 20px;background:radial-gradient(ellipse at 50% 20%,#fff 0,#eaf7ff 45%,#e8edff 100%);position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"✧";position:absolute;color:#a9d7f2;font-size:90px;opacity:.5}.hero:before{left:8%;top:18%}.hero:after{right:9%;bottom:18%}
+.eyebrow{letter-spacing:.22em;color:var(--rose);font: .8rem Georgia,serif}.hero h1{font-family:"Yu Mincho",serif;font-size:clamp(2.5rem,7vw,5rem);line-height:1.35;margin:22px 0;color:#466b86}.hero p{font-size:1.05rem}.btn{display:inline-block;margin-top:24px;padding:12px 28px;border-radius:99px;background:linear-gradient(110deg,#79c7ee,#a9bdf5);color:white;box-shadow:0 8px 22px #dba6c755}
+section{padding:88px 0}.section-head{text-align:center;margin-bottom:42px}.section-head small{letter-spacing:.2em;color:var(--rose);font-family:Georgia,serif}.section-head h2{font-family:"Yu Mincho",serif;font-size:clamp(1.8rem,4vw,2.8rem);margin:8px 0}
+.countdown{background:#fff;border:1px solid #d8edfa;border-radius:24px;padding:28px;max-width:760px;margin:36px auto 0;box-shadow:0 12px 35px #76b9df1a}.timer{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}.timebox{min-width:90px;background:#eff9ff;border-radius:16px;padding:12px}.timebox b{display:block;font-size:2rem;color:var(--rose);font-family:Georgia,serif}.timebox span{font-size:.75rem}
+.soft{background:linear-gradient(140deg,#fff,#eef9ff 55%,#edf0ff)}.intro{max-width:760px;text-align:center;margin:auto}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #dceefa;border-radius:22px;padding:26px;box-shadow:0 10px 25px #648eaa0c}.card .icon{font-size:2rem}.card h3{margin:8px 0;color:#4e8db4}.tag{display:inline-block;background:#eaf7ff;color:#4d9bc7;border-radius:99px;padding:3px 12px;font-size:.75rem}
+.timeline{max-width:760px;margin:auto}.day{display:grid;grid-template-columns:100px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #dcecf5}.day strong{color:var(--rose);font:1.3rem Georgia,serif}
+.passport{max-width:760px;margin:auto;text-align:center;background:#fff;border:1px solid #efd9e5;border-radius:26px;padding:30px}.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:25px 0}.stamp{aspect-ratio:1;border:1px dashed #a9d1e8;border-radius:15px;display:grid;place-items:center;color:#6fa9cb;background:#f5fbff}.stamp.done{background:#dff2ff;border-style:solid;color:#397fa9}.stamp span{font:1.2rem Georgia,serif}.passport button{border:0;border-radius:99px;padding:12px 26px;background:linear-gradient(110deg,#79c7ee,#91aef0);color:#fff;font-size:1rem;cursor:pointer}.passport button:disabled{opacity:.5;cursor:not-allowed}
+.benefits .card{text-align:center}.benefits .price{font:1.6rem Georgia,serif;color:var(--rose)}
+.faq{max-width:800px;margin:auto}.faq details{background:white;border:1px solid #dceefa;border-radius:14px;padding:16px 20px;margin:12px 0}.faq summary{cursor:pointer;font-weight:600}.faq p{margin-bottom:0}
+.cta{text-align:center;background:linear-gradient(120deg,#e1f4ff,#e9edff)}footer{text-align:center;padding:35px 15px;background:#fff;color:#6f91a8;font-size:.85rem}
+@media(max-width:700px){nav{gap:10px;font-size:.72rem}.cards{grid-template-columns:1fr}.hero{min-height:560px}.day{grid-template-columns:72px 1fr}.stamps{grid-template-columns:repeat(5,1fr);gap:6px}.stamp{font-size:.75rem}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#">🌙 YUPPI LIVE</a><nav><a href="#story">YUPPIについて</a><a href="#schedule">配信予定</a><a href="#policy">枠のポリシー</a><a href="#gift">応援コンテンツ</a></nav></div></header>
+<main>
+<section class="hero">
+  <div><div class="eyebrow">WELCOME TO YUPPI'S ROOM</div><h1>歌と雑談で、みんなとトップへ。<br>一緒に夢を叶える場所。</h1><p>Pococha・ColorSingで活動するYUPPIの応援サイト</p><a class="btn" href="#story">物語の続きを見る ↓</a>
+  <div class="countdown"><div class="eyebrow">NEXT STREAM / EVENT</div><h2>次の目標イベントまで</h2><div class="timer" id="timer"><div class="timebox"><b>--</b><span>DAYS</span></div><div class="timebox"><b>--</b><span>HOURS</span></div><div class="timebox"><b>--</b><span>MINUTES</span></div><div class="timebox"><b>--</b><span>SECONDS</span></div></div><small>※日時はJavaScriptの設定から変更できます。</small></div>
+  </div>
+</section>
+<section id="story" class="soft"><div class="wrap"><div class="section-head"><small>YUPPI'S STREAM POLICY</small><h2>歌と雑談でトップを目指す。みんなが主役の枠へ。</h2></div><div class="intro"><p>ここは、YUPPIの枠は「歌」と「雑談」を中心に、リスナーみんなと一緒にトップを目指す場所です。初めて来てくれた方も、いつも応援してくれる方も、ここで出会えたご縁を大切にしながら、楽しい時間と思い出を積み重ねていきます。</p><p>目指すのは、応援してくれるみんなが誇れるトップの枠。無理のない応援を大切に、歌で癒やし、雑談で笑顔になれる場所を一緒につくろう。</p></div><div class="cards" style="margin-top:35px"><article class="card"><div class="icon">♛</div><h3>歌で心をつなぐ</h3><p>心に届く歌を届け、初見さんにも楽しんでもらえる配信に。</p></article><article class="card"><div class="icon">♡</div><h3>雑談で笑顔をつなぐ</h3><p>何気ない会話も大切に。誰もが気軽に参加できる雰囲気に。</p></article><article class="card"><div class="icon">✧</div><h3>みんなでトップを目指す</h3><p>一人ひとりの応援と参加が力になる。感謝を忘れず一歩ずつ前へ。</p></article></div></div></section>
+<section id="schedule"><div class="wrap"><div class="section-head"><small>OUR SCHEDULE</small><h2>YUPPI 歌・雑談スケジュール</h2><p>歌枠・雑談枠・イベントなど、YUPPIの配信予定を掲載します。</p></div><div class="timeline"><div class="day"><strong>DAY 01</strong><div><b>歌枠 DAY</b><br>お気に入りの曲をリクエストして、一緒に盛り上がろう。</div></div><div class="day"><strong>DAY 02</strong><div><b>雑談 DAY</b><br>コメントで参加して、みんなで楽しい時間を。</div></div><div class="day"><strong>DAY 03</strong><div><b>チャレンジ DAY</b><br>目標に向けて、今できることを一歩ずつ。</div></div><div class="day"><strong>DAY 04</strong><div><b>リクエスト DAY</b><br>みんなの好きな歌を届けます。</div></div><div class="day"><strong>DAY 05</strong><div><b>ありがとう DAY</b><br>応援してくれるみんなに感謝を伝えよう。</div></div></div></div></section>
+
+<section id="policy" class="soft"><div class="wrap">
+  <div class="section-head"><small>OUR ROOM RULES</small><h2>YUPPI枠のポリシー</h2>
+  <p>歌と雑談でトップを目指すために、みんなで大切にしたい約束。</p></div>
+  <div class="cards">
+    <article class="card"><div class="icon">🎤</div><h3>歌を全力で届ける</h3><p>一曲一曲に心を込めて、聴いてくれるみんなに元気や癒やしを届けます。</p></article>
+    <article class="card"><div class="icon">💬</div><h3>雑談で笑顔になろう</h3><p>初見さんも常連さんも大歓迎。みんなが気軽に話せる、あたたかい枠を目指します。</p></article>
+    <article class="card"><div class="icon">🤝</div><h3>お互いを思いやる</h3><p>リスナー同士の挨拶や気遣いを大切に。誹謗中傷、過度な要求、他の方が困る言動は控えましょう。</p></article>
+    <article class="card"><div class="icon">🌟</div><h3>みんなでトップへ</h3><p>応援の形は人それぞれ。無理のない範囲で参加し、一人ひとりの力を大切にします。</p></article>
+    <article class="card"><div class="icon">🙏</div><h3>感謝を忘れない</h3><p>来てくれること、聴いてくれること、コメントしてくれること。そのすべてに感謝します。</p></article>
+    <article class="card"><div class="icon">🫧</div><h3>楽しい空間を守る</h3><p>配信の流れや歌の時間を尊重し、みんなが安心して楽しめる雰囲気を一緒につくりましょう。</p></article>
+  </div>
+  <div class="intro" style="margin-top:30px"><p><b>目標：</b>歌と雑談で愛される枠へ。そして、リスナーみんなと一緒にトップを目指します。</p></div>
+</div></section>
+
+<section id="passport" class="soft"><div class="wrap"><div class="section-head"><small>YOUR LITTLE PASSPORT</small><h2>YUPPIの枠に遊びに来た思い出を残そう。</h2><p>サイト訪問スタンプを集めて、応援ログに。</p></div><div class="passport"><h3>MY STREAM MEMORIES <span id="count">0</span> / 10 DAYS</h3><div class="stamps" id="stamps"></div><button id="stampBtn">今日のスタンプを押す ♡</button><p id="stampMsg">合計10日でコンプリート！</p><small>※このブラウザ内に保存されます。ブラウザのデータ削除・端末変更で消える場合があります。</small></div></div></section>
+<section id="gift" class="benefits"><div class="wrap"><div class="section-head"><small>A SWEET THANK YOU</small><h2>YUPPIを応援するみんなへ</h2><p>配信予定やイベント情報、応援企画などを掲載します。みんなで目標に向かうための情報ページです。</p></div><div class="cards"><article class="card"><span class="tag">LITTLE</span><h3>YUPPIプロフィール</h3><div class="price">アイコン</div><p>歌と雑談を届ける配信者 YUPPI。</p></article><article class="card"><span class="tag">SPECIAL</span><h3>歌・雑談スケジュール</h3><div class="price">限定グッズ</div><p>歌枠・雑談枠・イベントの予定をチェック。</p></article><article class="card"><span class="tag">PREMIUM</span><h3>枠のポリシー</h3><div class="price">特別な体験</div><p>思いやり・マナー・感謝を大切に、みんなで居心地のよい枠に。</p></article></div></div></section>
+<section class="faq soft"><div class="wrap"><div class="section-head"><small>Q & A</small><h2>よくある質問</h2></div><details><summary>スタンプは毎日押せますか？</summary><p>日本時間で１日１回押せます。連続でなくても合計日数でカウントします。</p></details><details><summary>スマートフォンでも見られますか？</summary><p>スマートフォン・タブレット・PCに対応したレイアウトです。</p></details><details><summary>イベント情報はどこで確認できますか？</summary><p>最新情報は公式配信・SNSでご確認ください。</p></details></div></section>
+<section class="cta"><div class="wrap"><div class="eyebrow">LET’S ENJOY STREAMING TOGETHER</div><h2>歌って、話して、笑って。みんなでトップを目指そう。</h2><p>YUPPIと一緒に、最高の景色を見に行こう！</p><a class="btn" href="#" target="_blank" rel="noopener">YUPPIの配信に遊びに行く ↗</a></div></section>
+</main>
+<footer>🌙 YUPPI LIVE　© 2026 All Rights Reserved.</footer>
+<script>
+// ▼次の目標イベント日時を日本時間で設定（必要に応じて変更）
+const eventDate = new Date("2026-11-13T00:00:00+09:00");
+function updateTimer(){
+ const diff=Math.max(0,eventDate-new Date());
+ const vals=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];
+ document.querySelector("#timer").innerHTML=vals.map((v,i)=>`<div class="timebox"><b>${String(v).padStart(2,"0")}</b><span>${["DAYS","HOURS","MINUTES","SECONDS"][i]}</span></div>`).join("");
+}
+updateTimer();setInterval(updateTimer,1000);
+
+// スタンプはブラウザのlocalStorageに保存。日付単位で1日1回。
+const KEY="sweetEmpireStampDates";
+const today=()=>new Intl.DateTimeFormat("sv-SE",{timeZone:"Asia/Tokyo"}).format(new Date());
+let dates=JSON.parse(localStorage.getItem(KEY)||"[]");
+function renderStamps(){
+ document.querySelector("#count").textContent=dates.length;
+ document.querySelector("#stamps").innerHTML=Array.from({length:10},(_,i)=>`<div class="stamp ${i<dates.length?"done":""}"><span>${i<dates.length?"♡":String(i+1).padStart(2,"0")}</span></div>`).join("");
+ const done=dates.includes(today());
+ document.querySelector("#stampBtn").disabled=done||dates.length>=10;
+ document.querySelector("#stampBtn").textContent=dates.length>=10?"コンプリート！ ♛":done?"今日はスタンプ済み ♡":"今日のスタンプを押す ♡";
+ document.querySelector("#stampMsg").textContent=dates.length>=10?"スタンプを集めてくれてありがとう！":`あと ${10-dates.length} 日でコンプリート！`;
+}
+document.querySelector("#stampBtn").addEventListener("click",()=>{
+ if(!dates.includes(today())&&dates.length<10){dates.push(today());localStorage.setItem(KEY,JSON.stringify(dates));renderStamps();}
+});
+renderStamps();
+</script>
+</body></html>
