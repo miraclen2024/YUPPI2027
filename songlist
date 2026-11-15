@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7fcff">
+<meta name="description" content="YUPPIの歌える楽曲リスト。アーティスト名や曲名からリクエスト曲を探せます。">
+<title>YUPPI｜SONG LIST</title>
+<style>
+:root{--pink:#b9e5ff;--rose:#6baed6;--ink:#405b70;--cream:#f7fcff;--lav:#e5f4ff;--gold:#9bc9e8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;background:var(--cream);line-height:1.8}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#f7fcffee;backdrop-filter:blur(12px);border-bottom:1px solid #d8edfa}
+.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:Georgia,serif;font-weight:bold;letter-spacing:.08em;color:var(--rose);white-space:nowrap}
+nav{display:flex;gap:22px;font-size:.88rem}
+nav a:hover{color:var(--rose)}
+.hero{min-height:430px;display:grid;place-items:center;text-align:center;padding:72px 20px;background:radial-gradient(ellipse at 50% 20%,#fff 0,#eaf7ff 45%,#e8edff 100%);position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"✧";position:absolute;color:#a9d7f2;font-size:90px;opacity:.5}
+.hero:before{left:8%;top:18%}.hero:after{right:9%;bottom:18%}
+.eyebrow{letter-spacing:.22em;color:var(--rose);font:.8rem Georgia,serif}
+.hero h1{font-family:"Yu Mincho",serif;font-size:clamp(2.8rem,8vw,5rem);line-height:1.25;margin:18px 0;color:#466b86}
+.hero p{font-size:1.02rem;margin:8px 0}
+.btn{display:inline-block;margin-top:22px;padding:12px 28px;border-radius:99px;background:linear-gradient(110deg,#79c7ee,#a9bdf5);color:white;box-shadow:0 8px 22px #76b9df55}
+section{padding:72px 0}
+.soft{background:linear-gradient(140deg,#fff,#eef9ff 55%,#edf0ff)}
+.section-head{text-align:center;margin-bottom:32px}
+.section-head small{letter-spacing:.2em;color:var(--rose);font-family:Georgia,serif}
+.section-head h2{font-family:"Yu Mincho",serif;font-size:clamp(1.8rem,4vw,2.6rem);margin:8px 0}
+.section-head p{margin:8px 0;color:#6d8799}
+.intro{max-width:760px;text-align:center;margin:auto}
+.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:26px auto 0}
+.stat{background:#fff;border:1px solid #d8edfa;border-radius:18px;padding:12px 24px;min-width:140px;box-shadow:0 8px 24px #76b9df12}
+.stat b{display:block;color:var(--rose);font:1.8rem Georgia,serif}
+.stat span{font-size:.78rem}
+.catalog{max-width:900px;margin:auto}
+.controls{background:#fff;border:1px solid #d8edfa;border-radius:22px;padding:20px;box-shadow:0 12px 35px #76b9df1a;margin-bottom:24px}
+.search-row{display:flex;gap:10px;flex-wrap:wrap}
+.search-row input{flex:1;min-width:220px;border:1px solid #cfe5f3;border-radius:14px;padding:13px 16px;font:inherit;color:var(--ink);outline:none}
+.search-row input:focus{border-color:var(--rose);box-shadow:0 0 0 3px #b9e5ff66}
+.search-row button,.filter-btn{border:0;border-radius:99px;padding:10px 18px;background:linear-gradient(110deg,#79c7ee,#91aef0);color:#fff;font:inherit;cursor:pointer}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.filter-btn{background:#eff9ff;color:#5689a8;border:1px solid #d8edfa;font-size:.84rem;padding:7px 14px}
+.filter-btn.active,.filter-btn:hover{background:linear-gradient(110deg,#79c7ee,#91aef0);color:white}
+.result-line{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:18px 4px 12px;font-size:.9rem;color:#6d8799}
+.result-line strong{color:var(--rose);font-size:1.1rem}
+.artist-card{background:#fff;border:1px solid #dceefa;border-radius:20px;margin:12px 0;overflow:hidden;box-shadow:0 8px 24px #648eaa0c}
+.artist-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:linear-gradient(100deg,#f3fbff,#f5f5ff);border-bottom:1px solid #e4f1f8}
+.artist-head h3{margin:0;color:#4e8db4;font-size:1.05rem}
+.artist-count{font-size:.76rem;background:#fff;border:1px solid #dceefa;border-radius:99px;padding:3px 10px;color:#6d9fbd;white-space:nowrap}
+.song-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;padding:8px 20px 14px}
+.song{padding:9px 2px;border-bottom:1px dashed #e3eef5;display:flex;gap:10px;align-items:flex-start}
+.song:before{content:"♫";color:#8fc5e5;font-size:1.05rem;line-height:1.7}
+.song span{overflow-wrap:anywhere}
+.empty{display:none;text-align:center;background:#fff;border:1px dashed #b9d9eb;border-radius:20px;padding:35px;color:#6d8799}
+.note{font-size:.82rem;color:#7892a4;text-align:center;margin-top:22px}
+.cta{text-align:center;background:linear-gradient(120deg,#e1f4ff,#e9edff)}
+footer{text-align:center;padding:30px 15px;background:#fff;color:#6f91a8;font-size:.85rem}
+@media(max-width:700px){
+ nav{gap:10px;font-size:.72rem}.nav{min-height:60px}.hero{min-height:360px;padding:58px 16px}
+ section{padding:58px 0}.song-list{grid-template-columns:1fr;padding:6px 16px 12px}
+ .artist-head{padding:12px 16px}.controls{padding:15px}.result-line{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#">🌙 YUPPI SONG LIST</a>
+  <nav><a href="#about">このページについて</a><a href="#songs">楽曲リスト</a><a href="#request">リクエスト</a></nav>
+ </div>
+</header>
+<main>
+ <section class="hero">
+  <div>
+   <div class="eyebrow">WELCOME TO YUPPI'S MUSIC ROOM</div>
+   <h1>YUPPI<br>SONG LIST</h1>
+   <p>歌でつながる、みんなの好きな一曲。</p>
+   <p>リクエストの参考に、歌える楽曲をチェックしてね ♡</p>
+   <a class="btn" href="#songs">楽曲リストを見る ↓</a>
+   <div class="stats">
+    <div class="stat"><b>144</b><span>SONGS</span></div>
+    <div class="stat"><b>75</b><span>ARTISTS</span></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="about" class="soft">
+  <div class="wrap">
+   <div class="section-head"><small>ABOUT THIS PAGE</small><h2>YUPPIの楽曲リストへようこそ</h2></div>
+   <div class="intro">
+    <p>こちらは、YUPPIの配信で楽しめる楽曲リストです。アーティスト名・曲名で検索したり、アーティストごとに曲をチェックできます。</p>
+    <p>「この曲聴きたい！」という一曲があれば、ぜひ配信で気軽にリクエストしてね。みんなで一緒に音楽を楽しみましょう ✧</p>
+   </div>
+  </div>
+ </section>
+
+ <section id="songs">
+  <div class="wrap">
+   <div class="section-head">
+    <small>YUPPI'S MUSIC COLLECTION</small>
+    <h2>楽曲リスト</h2>
+    <p>曲名・アーティスト名で検索できます。</p>
+   </div>
+   <div class="catalog">
+    <div class="controls">
+     <div class="search-row">
+      <input id="searchInput" type="search" placeholder="曲名・アーティスト名で検索…" aria-label="楽曲を検索">
+      <button id="clearBtn" type="button">クリア</button>
+     </div>
+     <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all" type="button">すべて</button>
+      <button class="filter-btn" data-filter="あ" type="button">あ行</button>
+      <button class="filter-btn" data-filter="か" type="button">か行</button>
+      <button class="filter-btn" data-filter="さ" type="button">さ行</button>
+      <button class="filter-btn" data-filter="た" type="button">た行</button>
+      <button class="filter-btn" data-filter="な" type="button">な行</button>
+      <button class="filter-btn" data-filter="は" type="button">は行</button>
+      <button class="filter-btn" data-filter="ま" type="button">ま行</button>
+      <button class="filter-btn" data-filter="や" type="button">や行</button>
+      <button class="filter-btn" data-filter="ら" type="button">ら行</button>
+      <button class="filter-btn" data-filter="わ" type="button">わ行</button>
+      <button class="filter-btn" data-filter="英数字" type="button">英数字</button>
+     </div>
+    </div>
+    <div class="result-line"><span>検索結果：<strong id="resultCount">144</strong> 曲</span><span id="artistCount">75 アーティスト</span></div>
+    <div id="songResults"></div>
+    <div class="empty" id="emptyState">該当する楽曲が見つかりませんでした。<br>別のキーワードで検索してみてね ♡</div>
+    <p class="note">※掲載内容は登録されている楽曲リストをもとに作成しています。</p>
+   </div>
+  </div>
+ </section>
+
+ <section id="request" class="cta">
+  <div class="wrap">
+   <div class="eyebrow">LET'S ENJOY MUSIC TOGETHER</div>
+   <h2>あなたの好きな一曲を教えてね ♡</h2>
+   <p>歌って、話して、笑って。YUPPIと一緒に楽しい時間を過ごしましょう。</p>
+   <a class="btn" href="https://www.pococha.com/ja-jp/app/users/806b7044-7ad8-43e3-b316-bd5c9c116135" target="_blank" rel="noopener">YUPPIの配信に遊びに行く ↗</a>
+  </div>
+ </section>
+</main>
+<footer>🌙 YUPPI SONG LIST　© 2026 All Rights Reserved.</footer>
+<script>
+const songs = [{"artist": "ACE COLLECTION", "title": "70億にただ1つの奇跡"}, {"artist": "Ado", "title": "私は最強"}, {"artist": "Ado", "title": "唱"}, {"artist": "DALI", "title": "ムーンライト伝説"}, {"artist": "DREAMS COME TRUE", "title": "大阪LOVER"}, {"artist": "DREAMS COME TRUE", "title": "未来予想図Ⅱ"}, {"artist": "DREAMS COME TRUE", "title": "雪のクリスマス"}, {"artist": "Every Little Thing", "title": "fragile"}, {"artist": "FRUITS ZIPPER", "title": "フルーツバスケット"}, {"artist": "FRUITS ZIPPER", "title": "わたしの一番かわいいところ"}, {"artist": "GLAY", "title": "HOWEVER"}, {"artist": "Le Couple", "title": "ひだまりの詩"}, {"artist": "MAHO堂", "title": "おジャ魔女カーニバル!!"}, {"artist": "MISIA", "title": "Everything"}, {"artist": "MISIA", "title": "アイノカタチ"}, {"artist": "Mrs. GREEN APPLE", "title": "ケセラセラ"}, {"artist": "Mrs. GREEN APPLE", "title": "ライラック"}, {"artist": "My Little Lover", "title": "DESTINY"}, {"artist": "My Little Lover", "title": "Hello, Again ～昔からある場所～"}, {"artist": "Novelbright", "title": "ツキミソウ"}, {"artist": "PUFFY", "title": "渚にまつわるエトセトラ"}, {"artist": "SEKAI NO OWARI", "title": "スターライトパレード"}, {"artist": "SEKAI NO OWARI", "title": "眠り姫"}, {"artist": "SMAP", "title": "世界に一つだけの花"}, {"artist": "SPEED", "title": "White Love"}, {"artist": "SPEED", "title": "my graduation"}, {"artist": "back number", "title": "水平線"}, {"artist": "fripSide", "title": "only my railgun"}, {"artist": "miwa", "title": "ヒカリヘ"}, {"artist": "mona(CV:夏川椎菜)", "title": "ファンサ"}, {"artist": "supercell", "title": "君の知らない物語"}, {"artist": "sumika", "title": "Honto"}, {"artist": "sumika", "title": "10時の方角"}, {"artist": "sumika", "title": "ファンファーレ"}, {"artist": "sumika", "title": "フィクション"}, {"artist": "sumika", "title": "願い"}, {"artist": "THE BOOM", "title": "風になりたい"}, {"artist": "Vaundy", "title": "怪獣の花唄"}, {"artist": "Vaundy", "title": "恋風邪にのせて"}, {"artist": "Whiteberry", "title": "夏祭り"}, {"artist": "YUI", "title": "CHE.R.RY"}, {"artist": "YUI", "title": "Please Stay With Me"}, {"artist": "ZARD", "title": "DAN DAN 心魅かれてく"}, {"artist": "ZARD", "title": "マイ フレンド"}, {"artist": "ZARD", "title": "揺れる想い"}, {"artist": "ZARD", "title": "負けないで"}, {"artist": "aiko", "title": "KissHug"}, {"artist": "aiko", "title": "milk"}, {"artist": "aiko", "title": "えりあし"}, {"artist": "aiko", "title": "カブトムシ"}, {"artist": "aiko", "title": "キラキラ"}, {"artist": "aiko", "title": "シアワセ"}, {"artist": "aiko", "title": "ストロー"}, {"artist": "aiko", "title": "ボーイフレンド"}, {"artist": "aiko", "title": "横顔"}, {"artist": "aiko", "title": "花火"}, {"artist": "aiko", "title": "桜の時"}, {"artist": "aiko", "title": "相思相愛"}, {"artist": "いきものがかり", "title": "YELL"}, {"artist": "いきものがかり", "title": "ありがとう"}, {"artist": "いきものがかり", "title": "コイスルオトメ"}, {"artist": "いきものがかり", "title": "ブルーバード"}, {"artist": "いきものがかり", "title": "風が吹いている"}, {"artist": "いきものがかり", "title": "気まぐれロマンティック"}, {"artist": "いきものがかり", "title": "SAKURA"}, {"artist": "一青窈", "title": "ハナミズキ"}, {"artist": "井上あずみ", "title": "となりのトトロ"}, {"artist": "井上あずみ", "title": "君をのせて"}, {"artist": "井上陽水", "title": "少年時代"}, {"artist": "久保田早紀", "title": "異邦人"}, {"artist": "優里", "title": "ドライフラワー"}, {"artist": "倖田來未", "title": "キューティーハニー"}, {"artist": "久保田利伸", "title": "Missing"}, {"artist": "大塚愛", "title": "SMILY"}, {"artist": "大塚愛", "title": "さくらんぼ"}, {"artist": "大塚愛", "title": "プラネタリウム"}, {"artist": "大黒摩季", "title": "あなただけ見つめてる"}, {"artist": "大黒摩季", "title": "いちばん近くにいてね"}, {"artist": "大黒摩季", "title": "チョット"}, {"artist": "大黒摩季", "title": "ら・ら・ら"}, {"artist": "大黒摩季", "title": "別れましょう私から消えましょうあなたから"}, {"artist": "大黒摩季", "title": "夏が来る"}, {"artist": "小泉今日子", "title": "あなたに会えてよかった"}, {"artist": "小林明子", "title": "恋におちて -Fall in love-"}, {"artist": "小田和正", "title": "ラブ・ストーリーは突然に"}, {"artist": "岡本真夜", "title": "TOMORROW"}, {"artist": "広瀬香美", "title": "DEAR...again"}, {"artist": "広瀬香美", "title": "ゲレンデがとけるほど恋したい"}, {"artist": "広瀬香美", "title": "ロマンスの神様"}, {"artist": "広瀬香美", "title": "幸せになりたい"}, {"artist": "広瀬香美", "title": "愛があれば大丈夫"}, {"artist": "手嶌葵", "title": "明日への手紙"}, {"artist": "星野源", "title": "アイデア"}, {"artist": "松任谷由実", "title": "ルージュの伝言"}, {"artist": "松任谷由実", "title": "真夏の夜の夢"}, {"artist": "松浦亜弥", "title": "桃色片想い"}, {"artist": "松田聖子", "title": "チェリーブラッサム"}, {"artist": "森高千里", "title": "ハエ男"}, {"artist": "森高千里", "title": "雨"}, {"artist": "槇原敬之", "title": "冬がはじまるよ"}, {"artist": "秦基博", "title": "ひまわりの約束"}, {"artist": "秦基博", "title": "ポケットに魔法を入れて"}, {"artist": "秦基博", "title": "鱗"}, {"artist": "爆風スランプ", "title": "Runner"}, {"artist": "石川ひとみ", "title": "まちぶせ"}, {"artist": "福山雅治", "title": "HELLO"}, {"artist": "米津玄師", "title": "Lemon"}, {"artist": "米津玄師", "title": "アイネクライネ"}, {"artist": "絢香", "title": "三日月"}, {"artist": "緑黄色社会", "title": "Mela!"}, {"artist": "緑黄色社会", "title": "花になって"}, {"artist": "菅田将暉", "title": "虹"}, {"artist": "華原朋美", "title": "I BELIEVE"}, {"artist": "華原朋美", "title": "I'm proud"}, {"artist": "薬師丸ひろ子", "title": "セーラー服と機関銃"}, {"artist": "斉藤和義", "title": "やさしくなりたい"}, {"artist": "斉藤和義", "title": "歩いて帰ろう"}, {"artist": "中森明菜", "title": "DESIRE -情熱-"}, {"artist": "中森明菜", "title": "少女A"}, {"artist": "中森明菜", "title": "難破船"}, {"artist": "中森明菜", "title": "北ウイング"}, {"artist": "中島みゆき", "title": "糸"}, {"artist": "中島美嘉", "title": "雪の華"}, {"artist": "レベッカ", "title": "フレンズ"}, {"artist": "ワルキューレ", "title": "いけないボーダーライン"}, {"artist": "ヨルシカ", "title": "アルジャーノン"}, {"artist": "ヨルシカ", "title": "ただ君に晴れ"}, {"artist": "ヨルシカ", "title": "だから僕は音楽を辞めた"}, {"artist": "ヨルシカ", "title": "春泥棒"}, {"artist": "ヨルシカ", "title": "晴る"}, {"artist": "スピッツ", "title": "チェリー"}, {"artist": "スピッツ", "title": "ロビンソン"}, {"artist": "スピッツ", "title": "空も飛べるはず"}, {"artist": "サザンオールスターズ", "title": "エロティカ・セブン"}, {"artist": "サザンオールスターズ", "title": "栞のテーマ"}, {"artist": "サザンオールスターズ", "title": "涙のキッス"}, {"artist": "フランシュシュ", "title": "REVENGE"}, {"artist": "フランシュシュ", "title": "徒花ネクロマンシー"}, {"artist": "フランシュシュ", "title": "目覚めRETURNER（Electric Returner）"}, {"artist": "ランカ・リー＝中島愛", "title": "星間飛行"}, {"artist": "May'n/中島愛", "title": "ライオン"}, {"artist": "CUTIE STREET", "title": "かわいいだけじゃだめですか？"}, {"artist": "CUTIE STREET", "title": "ひたむきシンデレラ！"}, {"artist": "=LOVE", "title": "とくべチュ、して"}];
+const rowMap = {
+ あ:"あいうえおアイウエオ",か:"かきくけこがぎぐげごカキクケコガギグゲゴ",
+ さ:"さしすせそざじずぜぞサシスセソザジズゼゾ",た:"たちつてとだぢづでどタチツテトダヂヅデド",
+ な:"なにぬねのナニヌネノ",は:"はひふへほばびぶべぼぱぴぷぺぽハヒフヘホバビブベボパピプペポ",
+ ま:"まみむめもマミムメモ",や:"やゆよヤユヨ",ら:"らりるれろラリルレロ",わ:"わをんワヲン"
+};
+function getRow(text){
+ const c=(text||"").trim().charAt(0);
+ for(const [row,chars] of Object.entries(rowMap)) if(chars.includes(c)) return row;
+ return "英数字";
+}
+let activeFilter="all";
+const input=document.getElementById("searchInput");
+const results=document.getElementById("songResults");
+function render(){
+ const q=input.value.trim().toLocaleLowerCase();
+ const filtered=songs.filter(s=>{
+  const match=(`${s.artist} ${s.title}`).toLocaleLowerCase().includes(q);
+  const rowMatch=activeFilter==="all" || getRow(s.artist)===activeFilter || (activeFilter==="英数字" && getRow(s.artist)==="英数字");
+  return match && rowMatch;
+ });
+ const groups=new Map();
+ filtered.forEach(s=>{if(!groups.has(s.artist)) groups.set(s.artist,[]);groups.get(s.artist).push(s.title);});
+ results.innerHTML=[...groups.entries()].map(([artist,titles])=>`
+  <article class="artist-card">
+   <div class="artist-head"><h3>${escapeHTML(artist)}</h3><span class="artist-count">${titles.length}曲</span></div>
+   <div class="song-list">${titles.map(title=>`<div class="song"><span>${escapeHTML(title)}</span></div>`).join("")}</div>
+  </article>`).join("");
+ document.getElementById("resultCount").textContent=filtered.length;
+ document.getElementById("artistCount").textContent=groups.size+" アーティスト";
+ document.getElementById("emptyState").style.display=filtered.length?"none":"block";
+}
+function escapeHTML(value){return String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
+input.addEventListener("input",render);
+document.getElementById("clearBtn").addEventListener("click",()=>{input.value="";activeFilter="all";document.querySelectorAll(".filter-btn").forEach(b=>b.classList.toggle("active",b.dataset.filter==="all"));render();});
+document.querySelectorAll(".filter-btn").forEach(btn=>btn.addEventListener("click",()=>{
+ activeFilter=btn.dataset.filter;
+ document.querySelectorAll(".filter-btn").forEach(b=>b.classList.toggle("active",b===btn));
+ render();
+}));
+render();
+</script>
+</body>
+</html>
