@@ -1,0 +1,15 @@
+/* Shared YUPPI site chrome; page content remains independently styled. */
+body .yuppi-standard-header{position:relative;top:auto;z-index:20;background:rgba(20,15,42,.96);border-bottom:1px solid #b99a60;color:#fff;backdrop-filter:blur(12px);padding:0}
+body .yuppi-standard-header .yuppi-standard-nav{box-sizing:border-box;width:min(1180px,100%);max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+body .yuppi-standard-header .yuppi-standard-brand{color:#ffe7aa;font-size:1.2rem;font-weight:800;text-decoration:none;white-space:nowrap}
+body .yuppi-standard-header nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:6px 14px;margin:0;padding:0}
+body .yuppi-standard-header nav a{color:#f4eaff;font-size:.85rem;text-decoration:none;padding:6px 0;white-space:nowrap}
+body .yuppi-standard-header nav a:hover,body .yuppi-standard-header nav a[aria-current=page]{color:#ffe7aa;text-decoration:underline;text-underline-offset:4px}
+body .yuppi-standard-footer{box-sizing:border-box;display:block;width:100%;max-width:none;margin:40px auto 0;padding:28px 16px;text-align:center;background:rgba(20,15,42,.92);border-top:1px solid #b99a60;color:#eee5ff}
+body .yuppi-standard-footer .yuppi-footer-sign{display:block;width:150px;max-width:70%;height:auto;margin:0 auto 10px}
+body .yuppi-standard-footer .yuppi-footer-name{font-weight:700;color:#ffe7aa}
+body .yuppi-standard-footer .yuppi-footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin:14px auto}
+body .yuppi-standard-footer a{color:#f4eaff;text-decoration:none;font-size:.85rem}
+body .yuppi-standard-footer small{color:#c9b9dc;font-size:.75rem}
+body .yuppi-standard-header a:focus-visible,body .yuppi-standard-footer a:focus-visible{outline:2px solid #ffe7aa;outline-offset:4px}
+@media(max-width:700px){body .yuppi-standard-header .yuppi-standard-nav{padding:12px;justify-content:center;gap:8px}body .yuppi-standard-header nav{justify-content:center;gap:4px 12px}body .yuppi-standard-header nav a{font-size:.78rem}body .yuppi-standard-footer{padding:22px 12px}}
