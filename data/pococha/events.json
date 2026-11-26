@@ -1,6 +1,123 @@
 {
   "events": [
     {
+      "name": "POCO LAND 2026 Celebration Party",
+      "start": "2026-12-25",
+      "end": "2026-12-25",
+      "min": null,
+      "max": null,
+      "entryStart": null,
+      "entryEnd": null,
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": true
+    },
+    {
+      "name": "POCOLAND EVE",
+      "start": "2026-12-24",
+      "end": "2026-12-24",
+      "min": null,
+      "max": null,
+      "entryStart": null,
+      "entryEnd": null,
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": true
+    },
+    {
+      "name": "Pocochaクリスマスパーティ2026",
+      "start": "2026-12-24",
+      "end": "2026-12-25",
+      "min": null,
+      "max": null,
+      "entryStart": null,
+      "entryEnd": null,
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": true
+    },
+    {
+      "name": "POCO LAND 2026 20Stars（S）",
+      "start": "2026-12-13T12:00",
+      "end": "2026-12-17T23:59",
+      "min": "S1",
+      "max": "S6",
+      "entryStart": "2026-12-05T16:00",
+      "entryEnd": "2026-12-12T01:59",
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": false
+    },
+    {
+      "name": "POCO LAND 2026 20Stars（B・A）",
+      "start": "2026-12-12T12:00",
+      "end": "2026-12-16T23:59",
+      "min": "B1",
+      "max": "A3",
+      "entryStart": "2026-12-04T16:00",
+      "entryEnd": "2026-12-11T01:59",
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": false
+    },
+    {
+      "name": "POCO LAND 2026 20Stars（D・C）",
+      "start": "2026-12-11T12:00",
+      "end": "2026-12-15T23:59",
+      "min": "D1",
+      "max": "C3",
+      "entryStart": "2026-12-03T16:00",
+      "entryEnd": "2026-12-10T01:59",
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": false
+    },
+    {
+      "name": "POCO LAND 2026 ぽこチャレ",
+      "start": "2026-11-26T12:00",
+      "end": "2026-12-02T23:59",
+      "min": null,
+      "max": null,
+      "entryStart": "2026-11-19T16:00",
+      "entryEnd": "2026-12-02T23:59",
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": false
+    },
+    {
+      "name": "世代ウォーズ",
+      "start": "2026-11-13",
+      "end": "2026-11-17",
+      "min": null,
+      "max": null,
+      "entryStart": null,
+      "entryEnd": null,
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": true
+    },
+    {
+      "name": "POCO LAND EVE 2026 屋台アンバサダー出演権",
+      "start": "2026-11-10T12:00",
+      "end": "2026-11-12T23:59",
+      "min": null,
+      "max": null,
+      "entryStart": "2026-11-05T16:00",
+      "entryEnd": "2026-11-09T01:59",
+      "url": "https://event.pococha.com/en-us/festivals/pocoland_eve_1_001_227171?tab=rules",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": false
+    },
+    {
       "name": "ワンワン いぬプロフィール",
       "entryStart": "2026-11-04T16:00",
       "entryEnd": "2026-11-09T01:59",
@@ -9,7 +126,34 @@
       "min": "D1",
       "max": "S6",
       "url": "https://event.pococha.com/ja-jp/festivals/dog_profile_1_001_225310",
-      "thumbnail": null
+      "thumbnail": null,
+      "source": "既存登録・今回未再確認"
+    },
+    {
+      "name": "ポコキャラバン10周年祭",
+      "start": "2026-11-07",
+      "end": "2026-11-29",
+      "min": null,
+      "max": null,
+      "entryStart": null,
+      "entryEnd": null,
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": true
+    },
+    {
+      "name": "プレ世代ウォーズ",
+      "start": "2026-10-21",
+      "end": "2026-10-25",
+      "min": null,
+      "max": null,
+      "entryStart": null,
+      "entryEnd": null,
+      "url": "https://report.pococha.com/n/nbf2c1188a729",
+      "thumbnail": null,
+      "source": "Pococha公式",
+      "dateOnly": true
     },
     {
       "name": "ぽこネクスト-池袋駅広告-",
@@ -20,7 +164,8 @@
       "min": "D1",
       "max": "A3",
       "url": "https://event.pococha.com/ja-jp/festivals/poconext_1_001_224400",
-      "thumbnail": null
+      "thumbnail": null,
+      "source": "既存登録・今回未再確認"
     },
     {
       "name": "ウトのもちもちクッション",
@@ -31,9 +176,11 @@
       "min": "D3",
       "max": "S6",
       "url": "https://event.pococha.com/ja-jp/festivals/uto_cushion_1_001_223240",
-      "thumbnail": null
+      "thumbnail": null,
+      "source": "既存登録・今回未再確認"
     }
   ],
   "coverage": "partial",
-  "automatic": false
+  "automatic": false,
+  "updated": "2026-11-26"
 }
