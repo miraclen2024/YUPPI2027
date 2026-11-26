@@ -1,1 +1,89 @@
-<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>JOYSOUND 楽曲検索 | YUPPI</title><style>body{margin:0;background:#171328;color:white;font:16px system-ui}main{max-width:960px;margin:auto;padding:24px}section{background:#25203b;border:2px solid #c6a45a;border-radius:18px;padding:24px;margin:20px 0}h1,a{color:#f5d58c}.btn{display:inline-block;border:1px solid #f5d58c;padding:14px;border-radius:12px;text-decoration:none}</style><main><a href="./index.html">← YUPPIトップ</a><section><h1>🎤 JOYSOUND 楽曲検索</h1><p>JOYSOUND for STREAMER の収録楽曲を検索できる外部の非公式サービスへの案内です。ColorSingの対応曲や現在の収録状況を保証するものではありません。</p><a class="btn" href="https://joysound-streamer-search.web.app/" target="_blank" rel="noopener noreferrer">楽曲検索を開く ↗</a><p>出典：<a href="https://github.com/pikatenor/joysound-streamer-search">pikatenor / joysound-streamer-search</a></p></section><section><h2>ColorSing追加楽曲</h2><a href="./colorsing-songlist.html">既存の追加楽曲リスト（検証版）</a></section><p>楽曲データの独自収録・音源配布は行っていません。</p></main></html>
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JOYSOUND for STREAMER 楽曲データ検索｜YUPPI</title>
+<meta name="description" content="JOYSOUND for STREAMERの公開非公式楽曲データから曲名・歌手名・読み仮名を検索するYUPPI楽曲検索ページ。">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JZ773NN38"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6JZ773NN38');</script>
+<style>
+:root{color-scheme:dark;--gold:#f3d998;--ink:#160f2b;--line:#b99a57;--muted:#c7c1d1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#463262 0,#1a1234 50%,#0d1026 100%);color:#fff;font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.7;min-height:100vh}
+body:before{content:"✦  ✧     ✨      ✦       ✧       ✦         ✨";position:absolute;top:45px;left:0;width:100%;text-align:center;opacity:.3;letter-spacing:1.5vw;pointer-events:none}
+main{max-width:1100px;margin:auto;padding:24px 18px 75px}.back{display:inline-block;margin:8px 0 20px;color:var(--gold)}
+.hero,.panel{border:2px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#29213f,#17142e);box-shadow:0 12px 35px #0004, inset 0 0 0 1px #fbe9a422;padding:25px;margin-bottom:20px}
+.hero{text-align:center;padding:38px 25px}.eyebrow{font-size:12px;letter-spacing:.19em;color:var(--gold)}h1{font-size:clamp(24px,5vw,38px);line-height:1.4;margin:12px 0;color:#ffe2a5;text-shadow:0 0 16px #c6a55d44}h2{font-size:19px;color:var(--gold);margin:0 0 13px}a{color:#ffdb91}
+.note{max-width:820px;margin:8px auto;font-size:13px;color:#e6ddeb}.small{font-size:13px;color:var(--muted)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.fields label{display:block;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:4px}
+input{width:100%;background:#fff;color:#222;border:2px solid #d6bc79;border-radius:12px;font:inherit;padding:11px 13px;min-height:48px}
+input:focus{outline:3px solid #ffd66b66}.toolbar{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;margin-top:16px}
+button{cursor:pointer;font:inherit;border:1px solid #c7a35e;color:#271d36;background:linear-gradient(#fff0c2,#edc36d);border-radius:12px;padding:10px 18px;font-weight:700}button:disabled{opacity:.4;cursor:default}
+#status{font-size:14px;color:#e7d39f}#summary{font-size:14px;color:#f3e2b9}.tablewrap{overflow:auto;max-width:100%}table{width:100%;border-collapse:collapse;min-width:630px}th{color:#ffe0a4;background:#41314d;text-align:left;font-size:13px}th,td{padding:12px 10px;border-bottom:1px solid #ffffff24;vertical-align:top}td{font-size:14px}td small{display:block;font-size:12px;color:#c6bfd1}tr:hover td{background:#fff1}.pagination{display:flex;align-items:center;justify-content:center;gap:14px;padding-top:18px}
+.stat{font-size:21px;font-weight:800;color:#ffdf90}.provider{border-left:3px solid #eac579;padding:12px 16px;background:#ffffff0a;margin:12px 0;font-size:13px}
+#fallback{display:none}#fallback.show{display:block}.footer{font-size:12px;color:#ddd;text-align:center}.footer a{margin:0 6px}
+@media(max-width:650px){main{padding:14px 12px 45px}.hero,.panel{padding:18px}.fields{grid-template-columns:1fr}.hero{padding:26px 15px}}
+</style></head><body><main>
+<a class="back" href="./index.html">← YUPPI 応援特設サイト</a>
+<header class="hero"><div class="eyebrow">YUPPI × KARAOKE SEARCH</div>
+<h1>🎤 JOYSOUND 楽曲データ検索</h1>
+<p>JOYSOUND for STREAMERの公開楽曲データを検索</p>
+<div class="note">非公式の公開データベースをブラウザ上で読み取ります。ColorSingでの音源利用可否や、JOYSOUND公式の最新収録曲を保証するものではありません。</div>
+</header>
+<section class="panel"><h2>楽曲を探す</h2>
+<div class="fields"><div><label for="titleQuery">曲名・読み仮名</label><input id="titleQuery" autocomplete="off" placeholder="曲名を入力（例：夢の中へ）"></div>
+<div><label for="artistQuery">アーティスト名・読み仮名</label><input id="artistQuery" autocomplete="off" placeholder="歌手名を入力（例：井上陽水）"></div></div>
+<div class="toolbar"><div id="status" role="status">公開楽曲データを準備しています…</div><button type="button" id="clear">検索条件クリア</button></div>
+<div class="provider">元データ：<a href="https://github.com/pikatenor/joysound-streamer-search" target="_blank" rel="noopener noreferrer">pikatenor / joysound-streamer-search</a>（非公式）<span id="origin"></span><span id="updated"></span><div class="small">公開DB：約6.8MB／ブラウザ内でSQLite検索／楽曲音声・歌詞データの配布はありません</div></div>
+</section>
+<section class="panel"><h2>収録楽曲一覧・検索結果</h2><p id="summary">データを読み込み中です。</p>
+<div class="tablewrap"><table><thead><tr><th>楽曲名</th><th>アーティスト</th><th>曲番号</th><th>作品・タイアップなど</th></tr></thead><tbody id="results"></tbody></table></div>
+<div class="pagination"><button id="prev" disabled>前の50件</button><span id="page">—</span><button id="next" disabled>次の50件</button></div>
+<div id="fallback"><h2>取得元に登録された確認用サンプル</h2><p class="small">公開DBへの接続に失敗した場合は、GitHubの db.sql から確認できた5件を表示します。全曲検索ではありません。</p></div>
+</section>
+<section class="panel"><h2>参照サイト・注意事項</h2>
+<p><a href="https://joysound-streamer-search.web.app/" target="_blank" rel="noopener noreferrer">JOYSOUND for STREAMER 楽曲検索（提供元アプリ）↗</a></p>
+<p><a href="https://github.com/pikatenor/joysound-streamer-search/blob/main/src/assets/db.sql" target="_blank" rel="noopener noreferrer">楽曲テーブル定義・サンプルデータ ↗</a></p>
+<p><a href="https://streamer.joysound.com/" target="_blank" rel="noopener noreferrer">JOYSOUND for STREAMER 公式サイト ↗</a></p>
+<p class="small">これは独立した非公式検索ページです。データ取得元サイトおよびJOYSOUND運営とは無関係です。実際の収録状況や配信利用条件は公式サービスで確認してください。公開楽曲DBの複製はYUPPIリポジトリには保存していません。</p></section>
+<footer class="footer">© YUPPI Fan Support Site · <a href="./songlist.html">YUPPI歌リスト</a> · <a href="./sitemap.html">サイトマップ</a></footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.13.0/sql-wasm.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/sql.js@1.13.0/dist/sql-wasm.js'"></script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const state={db:null,total:0,count:0,page:0,timer:null};
+const limit=50;
+const sample=[
+{title:'01',artist:'女王蜂',song_no:621851,group_id:990029,info:'TVアニメ「アンデッドアンラック」オープニングテーマ'},
+{title:'あ',artist:'クリープハイプ',song_no:249842,group_id:297469,info:''},
+{title:'ああ情熱のバンバラヤー',artist:'LinQ',song_no:425277,group_id:666570,info:'妖怪ウォッチ関連楽曲'},
+{title:'唄い人',artist:'清木場俊介',song_no:50763,group_id:36233,info:'映画主題歌'},
+{title:'夢の中へ',artist:'井上陽水',song_no:3715,group_id:3715,info:''}
+];
+function setStatus(t){$('status').textContent=t}
+function cell(tr,text){let td=document.createElement('td');td.textContent=String(text??'');tr.append(td);return td}
+function draw(rows){$('results').replaceChildren();for(const s of rows){const tr=document.createElement('tr');const td=cell(tr,'');const a=document.createElement('a');a.href='https://www.joysound.com/web/search/song/'+encodeURIComponent(s.group_id);a.target='_blank';a.rel='noopener noreferrer';a.textContent=s.title;td.append(a);cell(tr,s.artist);cell(tr,s.song_no);cell(tr,s.info||'—');$('results').append(tr)}}
+function showFallback(err){state.db=null;$('fallback').classList.add('show');draw(sample);$('summary').textContent='5件の確認用サンプルのみ（全曲DBの取得失敗）';$('page').textContent='—';$('prev').disabled=$('next').disabled=true;setStatus('公開DBへ接続できません：'+(err?.message||'通信環境・CORS制限をご確認ください'))}
+function filteredQuery(){let where=[],bind=[];const t=$('titleQuery').value.trim(),a=$('artistQuery').value.trim();function esc(s){return s.replace(/[\\%_]/g,'\\$&')}if(t){where.push("(title LIKE ? ESCAPE '\\' OR title_ruby LIKE ? ESCAPE '\\')");bind.push('%'+esc(t)+'%','%'+esc(t)+'%')}if(a){where.push("(artist LIKE ? ESCAPE '\\' OR artist_ruby LIKE ? ESCAPE '\\')");bind.push('%'+esc(a)+'%','%'+esc(a)+'%')}return{sql:where.length?' WHERE '+where.join(' AND '):'',bind}}
+function runQuery(sql,params){const st=state.db.prepare(sql);try{st.bind(params);const rows=[];while(st.step())rows.push(st.getAsObject());return rows}finally{st.free()}}
+function search(reset){if(!state.db)return;if(reset)state.page=0;try{const {sql,bind}=filteredQuery();state.count=Number(runQuery('SELECT COUNT(*) AS n FROM songs'+sql,bind)[0]?.n||0);if(state.page*limit>=state.count)state.page=0;const rows=runQuery('SELECT title,artist,song_no,group_id,info FROM songs'+sql+' ORDER BY title,artist,id LIMIT '+limit+' OFFSET '+(state.page*limit),bind);draw(rows);$('summary').textContent='検索結果 '+state.count.toLocaleString('ja-JP')+'件 / データベース全体 '+state.total.toLocaleString('ja-JP')+'件';const pmax=Math.max(1,Math.ceil(state.count/limit));$('page').textContent=(state.page+1)+' / '+pmax+'ページ';$('prev').disabled=state.page===0;$('next').disabled=(state.page+1)>=pmax;setStatus('データ読み込み完了・検索できます')}catch(e){setStatus('検索エラー：'+e.message)}}
+function loadScript(url){return new Promise((ok,ng)=>{const s=document.createElement('script');s.src=url;s.onload=ok;s.onerror=()=>ng(new Error('検索エンジンの読み込みに失敗'));document.head.append(s)})}
+async function load(){
+try{
+if(typeof initSqlJs!=='function')await loadScript('https://cdn.jsdelivr.net/npm/sql.js@1.13.0/dist/sql-wasm.js');
+setStatus('SQLite検索エンジンを起動しています…');
+let SQL;try{SQL=await initSqlJs({locateFile:f=>'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.13.0/'+f})}catch(e){SQL=await initSqlJs({locateFile:f=>'https://cdn.jsdelivr.net/npm/sql.js@1.13.0/dist/'+f})}
+const sources=[
+'https://raw.githubusercontent.com/pikatenor/joysound-streamer-search/main/src/assets/db.sqlite',
+'https://cdn.jsdelivr.net/gh/pikatenor/joysound-streamer-search@main/src/assets/db.sqlite'
+];
+let buf=null,errors=[];for(const url of sources){try{setStatus('公開SQLite楽曲DBを取得しています…');const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),25000);try{const r=await fetch(url,{cache:'no-store',credentials:'omit',signal:ctl.signal});if(!r.ok)throw Error('HTTP '+r.status);buf=new Uint8Array(await r.arrayBuffer());if(buf.length<100000)throw Error('DBデータではありません');$('origin').textContent='／取得元：'+(url.includes('jsdelivr')?'CDN':'GitHub Raw')}finally{clearTimeout(t)}break}catch(e){errors.push(e.message)}}if(!buf)throw Error(errors.join(' / '));
+state.db=new SQL.Database(buf);state.total=Number(runQuery('SELECT COUNT(*) AS n FROM songs',[])[0]?.n||0);if(!state.total)throw Error('曲データが空です');
+const meta=runQuery('SELECT updated_at FROM meta LIMIT 1',[])[0];if(meta?.updated_at)$('updated').textContent='／DB更新：'+meta.updated_at;
+$('fallback').classList.remove('show');search(true);
+}catch(e){showFallback(e)}
+}
+$('titleQuery').addEventListener('input',()=>{clearTimeout(state.timer);state.timer=setTimeout(()=>search(true),230)});
+$('artistQuery').addEventListener('input',()=>{clearTimeout(state.timer);state.timer=setTimeout(()=>search(true),230)});
+$('clear').addEventListener('click',()=>{$('titleQuery').value='';$('artistQuery').value='';search(true)});
+$('prev').addEventListener('click',()=>{if(state.page>0){state.page--;search(false)}});
+$('next').addEventListener('click',()=>{if((state.page+1)*limit<state.count){state.page++;search(false)}});
+load();
+</script></body></html>
