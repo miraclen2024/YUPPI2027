@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "name": "ワンワン いぬプロフィール",
+      "entryStart": "2026-11-04T16:00",
+      "entryEnd": "2026-11-09T01:59",
+      "start": "2026-11-09T12:00",
+      "end": "2026-11-11T23:59",
+      "min": "D1",
+      "max": "S6",
+      "url": "https://event.pococha.com/ja-jp/festivals/dog_profile_1_001_225310",
+      "thumbnail": null
+    },
+    {
+      "name": "ぽこネクスト-池袋駅広告-",
+      "entryStart": null,
+      "entryEnd": null,
+      "start": "2026-10-09T12:00",
+      "end": "2026-10-13T23:59",
+      "min": "D1",
+      "max": "A3",
+      "url": "https://event.pococha.com/ja-jp/festivals/poconext_1_001_224400",
+      "thumbnail": null
+    },
+    {
+      "name": "ウトのもちもちクッション",
+      "entryStart": "2026-09-15T16:00",
+      "entryEnd": "2026-09-21T01:59",
+      "start": "2026-09-21T12:00",
+      "end": "2026-09-21T23:59",
+      "min": "D3",
+      "max": "S6",
+      "url": "https://event.pococha.com/ja-jp/festivals/uto_cushion_1_001_223240",
+      "thumbnail": null
+    }
+  ],
+  "coverage": "partial",
+  "automatic": false
+}
