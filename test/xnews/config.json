@@ -28,5 +28,17 @@
   ],
   "favorite_post_limit_per_account": 2,
   "favorite_exclude_reposts": true,
-  "favorite_sort": "published_at_desc"
+  "favorite_sort": "published_at_desc",
+  "collection": {
+    "mode": "public_web",
+    "profile_urls": [
+      "https://x.com/F7Lyp8",
+      "https://x.com/MegusLove",
+      "https://x.com/2024YUPPI"
+    ],
+    "verify_post_url": true,
+    "retain_previous_on_failure": true,
+    "output": "test/xnews/news.json",
+    "allow_paid_api": false
+  }
 }
