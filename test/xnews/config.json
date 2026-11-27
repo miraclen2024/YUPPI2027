@@ -24,5 +24,8 @@
   "favorite_accounts": [
     "@F7Lyp8",
     "@MegusLove"
-  ]
+  ],
+  "favorite_post_limit_per_account": 2,
+  "favorite_exclude_reposts": true,
+  "favorite_sort": "published_at_desc"
 }
