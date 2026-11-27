@@ -1,0 +1,25 @@
+{
+  "api": {
+    "enabled": false,
+    "free_only": true,
+    "paid_budget_usd": 0,
+    "stop_percent": 80,
+    "auto_charge": false,
+    "stop_on_unknown_usage": true
+  },
+  "fallback": {
+    "enabled": true,
+    "official_sources_first": true
+  },
+  "queries": [
+    "Pococha 公式 イベント",
+    "ColorSing 公式 イベント",
+    "#Pococha",
+    "#ColorSing",
+    "#TheOnePhrase",
+    "ライブ開催情報",
+    "YUPPI @2024YUPPI",
+    "Pococha ColorSing 新着イベント"
+  ],
+  "favorite_accounts": []
+}
