@@ -1,5 +1,34 @@
 {
-  "updated_at": null,
-  "status": "not_collected",
-  "items": []
+  "updated_at": "2026-11-28 (JST)",
+  "status": "partial",
+  "items": [
+    {
+      "category": "Pococha公式",
+      "title": "POCO LAND 2026 ぽこチャレ",
+      "summary": "開催期間 11/26 12:00～12/2 23:59:59（公式告知）",
+      "url": "https://report.pococha.com/n/nbf2c1188a729"
+    },
+    {
+      "category": "Pococha公式",
+      "title": "POCOLAND EVE",
+      "summary": "12/24開催予定",
+      "url": "https://report.pococha.com/n/nbf2c1188a729"
+    },
+    {
+      "category": "ColorSing",
+      "title": "#TheOnePhrase 楓",
+      "summary": "イベントカレンダー掲載期間 11/27 12:00～12/3 23:00",
+      "url": "https://colorsing-event.wraptas.site/events"
+    },
+    {
+      "category": "ColorSing",
+      "title": "DREAM FES 2027 開催記念 モザイクアート企画",
+      "summary": "イベントカレンダー掲載期間 11/27 12:00～11/30 00:00",
+      "url": "https://colorsing-event.wraptas.site/events"
+    }
+  ],
+  "limitations": [
+    "お気に入り2名の新着投稿、YUPPI関連反響は未確認",
+    "X API未使用"
+  ]
 }
